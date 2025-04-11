@@ -46,7 +46,7 @@ uvicorn main:app --reload
 ---
 
 ## 📂 Project Structure (Clean Architecture)
-
+```bash
 app/
 ├── core/                            # App-wide configuration
 │   └── config.py
@@ -97,7 +97,7 @@ app/
 ├── main.py                         # App entry point
 └── .env                            # Environment configuration
 
-
+```
 
 ---
 
