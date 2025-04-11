@@ -1,17 +1,9 @@
-# Python bytecode
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
-
-# Virtual environment
-venv/
-env/
-
-# Environment variables
+*.pyd
 .env
-
-# OS files
-.DS_Store
-
-# VSCode
-.vscode/
+.venv
+venv/
+ENV/
+env/
