@@ -1,29 +1,37 @@
-# FastAPI Auth Microservice
+# 🚀 FastAPI Auth Microservice
 
-This is an authentication microservice built with **FastAPI** and **PostgreSQL**, structured using **Clean Architecture**, **SOLID principles**, and **CQRS** (Command Query Responsibility Segregation) design pattern.
+This is an authentication microservice built with **FastAPI** and **PostgreSQL**, structured using **Clean Architecture**, **SOLID principles**, and the **CQRS (Command Query Responsibility Segregation)** design pattern.
+
+---
 
 ## ✅ Architecture Highlights
 
-- ✅ **Clean Architecture**: clear separation of concerns between domain, use cases, interfaces, and infrastructure.
-- ✅ **SOLID Principles**: modular and maintainable code following industry best practices.
-- ✅ **CQRS Pattern**: separation between commands (write operations) and queries (read operations).
+- 🧱 **Clean Architecture** – Clear separation of concerns between domain, use cases, interfaces, and infrastructure.
+- 🧩 **SOLID Principles** – Modular and maintainable code following industry best practices.
+- ⚡ **CQRS Pattern** – Clear split between Commands (write) and Queries (read).
+
+---
 
 ## 🚀 Features
 
-- User registration with encrypted password
-- Asynchronous PostgreSQL access via SQLAlchemy + asyncpg
-- DTO validation using Pydantic
-- Modular structure for scalability and testing
-- Dockerized for easy local or production deployment
+- 🔐 User registration with encrypted password
+- ⚡ Async PostgreSQL access via SQLAlchemy + asyncpg
+- ✅ DTO validation using Pydantic
+- 📦 Modular structure for scalability and testing
+- 🐳 Dockerized for local/production deployment
+
+---
 
 ## 🛠️ Tech Stack
 
-- FastAPI
-- PostgreSQL
-- SQLAlchemy (async)
-- Alembic
-- Docker
-- Python 3.11+
+- **Python** 3.11+
+- **FastAPI**
+- **PostgreSQL**
+- **SQLAlchemy** (async)
+- **Alembic**
+- **Docker**
+
+---
 
 ## 🏁 Getting Started
 
@@ -31,11 +39,14 @@ This is an authentication microservice built with **FastAPI** and **PostgreSQL**
 # Install dependencies
 pip install -r requirements.txt
 
-# Run app
+# Run the app
 uvicorn main:app --reload
+```
 
+---
 
-📂 Project Structure (Clean Architecture)
+## 📂 Project Structure (Clean Architecture)
+
 app/
 ├── core/                            # App-wide configuration
 │   └── config.py
@@ -88,5 +99,8 @@ app/
 
 
 
-📄 License
+---
+
+## 📄 LICENSE
+
 MIT
