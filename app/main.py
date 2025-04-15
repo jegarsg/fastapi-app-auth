@@ -6,6 +6,7 @@ from app.core.config import get_settings
 from app.infrastructure.database.models import user_model  # ensure model import
 from app.shared.middlewares.auth_middleware import AuthMiddleware
 
+
 settings = get_settings()
 print("✅ DATABASE_URL from env:", settings.DATABASE_URL)
 

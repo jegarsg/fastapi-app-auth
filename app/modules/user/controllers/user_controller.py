@@ -6,8 +6,7 @@ from app.modules.user.dtos.request.user_request_dto import RegisterUserDTO
 from app.modules.user.features.commands.login.handlers.login_handler import LoginUserHandler
 from app.modules.user.dtos.request.login_request_dto import LoginUserDTO
 from app.modules.user.features.queries.get_user_by_email.handlers.get_user_by_email_handler import GetUserByEmailHandler
-from app.shared.utils.jwt import get_email_from_token
-from app.modules.user.dtos.user_dto import UserOutDto
+from fastapi import APIRouter, Request, Depends, HTTPException, status
 
 # Mount this under /api/user in main.py
 router = APIRouter(prefix="/api", tags=["User"])
@@ -29,11 +28,11 @@ async def login(payload: LoginUserDTO, db: AsyncSession = Depends(get_db)):
 
 
 
-@router.post("/user/secure/get-by-email", response_model=UserOutDto)
-async def get_user_by_email(
-    db: AsyncSession = Depends(get_db),
-    email: str = Depends(get_email_from_token),
-):
+@router.post("/get-by-email")
+async def get_by_email(request: Request, db: AsyncSession = Depends(get_db)):
+    user = getattr(request.state, "user", None)
+    if not user or not user.get("email"):
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    email = user["email"]  # Get the email from the claims
     handler = GetUserByEmailHandler(db)
-    user = await handler.handle(email)
-    return user
+    return await handler.handle(email)
