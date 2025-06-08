@@ -1,7 +1,7 @@
 import re
 from app.shared.utils.encryption import hash_password
 from app.shared.utils.string_generator import generate_username
-from app.modules.user.commands.register_user_command import RegisterUserCommand
+from app.modules.user.features.commands.register.register_user_command import RegisterUserCommand
 from app.infrastructure.database.models.user_model import User
 from app.modules.user.repository.user_repository import UserRepository
 
